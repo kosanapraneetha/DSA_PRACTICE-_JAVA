@@ -1,4 +1,5 @@
-
+//Problem:Reversing Array
+//Approach : 2- pointer
 import java.util.Arrays;
 public class ReverseArray{
     public static void reverseArray(int[] arr){
@@ -17,3 +18,5 @@ public class ReverseArray{
         System.out.println(Arrays.toString(arr));//to print in array form.
     }
 }
+//Space complexity:O(n);
+//Time complexity:1;
