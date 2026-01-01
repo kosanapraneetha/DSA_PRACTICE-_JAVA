@@ -1,10 +1,10 @@
-Problem:TwoSumArray
+/*Problem:TwoSumArray
 Approach: 1.HashMap
           2.Nested for loop//Brute Force Approach
-  //Mentioned both approaches:
+  Mentioned both approaches:
 Solution:[1]
   Time complexity:O(n);
-  Space Complexity:1;
+  Space Complexity:1;*/
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Arrays;
@@ -28,9 +28,9 @@ public class TwoSumArrray{
     }
 }
 
-[2]:
+/*[2]:
   Time Complexity:O(n^2);
-  Space Complexity:O(1);
+  Space Complexity:O(1);*/
 import java.util.Arrays;
 public class TwoSumArray{
     public static int[] twosum(int[] arr,int target){
