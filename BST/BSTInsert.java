@@ -1,4 +1,4 @@
-
+//Problem:BST Insertion
 public class BST{
     static class Node{
         int data;
@@ -40,3 +40,6 @@ public class BST{
        inorder(obj.root);
     }
 }
+//Time complexity:O(log n)
+//Space Complexity:O(log n)--recursive path
+//Mostly BST's complexity's are O(h);
