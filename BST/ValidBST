@@ -1,0 +1,28 @@
+//Problem:Validating BST 
+public class ValidBST{
+    static class Node{
+        int data;
+        Node left;
+        Node right;
+        Node(int data){
+            this.data=data;
+            left=right=null;
+        }
+    }
+    Node root;
+    public static boolean validBST(Node root,long min,long max){
+        if(root==null) return true; //empty tree also a valid BST.
+        if(root.data<=min ||root.data>max) return false;//value out of range then not valid
+        return validBST(root.left,min,root.data) && validBST(root.right,root.data,max);
+    }
+    public static void main(String[] args){
+        Node root=new Node(8);
+    root.left=new Node(5);
+    root.right=new Node(10);
+    root.left.left=new Node(2);
+    root.left.right=new Node(6);
+    System.out.println(validBST(root,Long.MIN_VALUE,Long.MAX_VALUE));
+    }
+}
+//Time Complexity:O(n) --n- number of nodes
+//Space Complexity:O(h)--h height of the tree
