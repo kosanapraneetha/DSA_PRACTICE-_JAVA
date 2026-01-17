@@ -12,6 +12,7 @@ This repository contains my Data Structures and Algorithms practice using Java.
 - Queue
 - Trees
 - Binary Search Tree
+- Greedy search Algorithms
 - Graphs
 - Dynamic Programming
 
