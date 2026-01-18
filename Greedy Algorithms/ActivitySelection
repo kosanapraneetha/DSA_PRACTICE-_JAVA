@@ -1,16 +1,17 @@
 //Problem: Selecting activities which are non-overlapping
+//Approach:Sort the array-check the lastEnd of each activity and determine .
 import java.util.Arrays;
-public class Main{
-        public static int activitySelection(int[][] actis){
-            if(actis.length==0) return 0;
+public class ActivitySelection{
+        public static int activitySelection(int[][] activities){
+            if(activities.length==0) return 0;
             java.util.Arrays.sort(actis,(a,b)->a[1]-b[1]);//lamda statement 
             int count=1;
-            int lastEnd=actis[0][1];
-            for(int i=1;i<actis.length;i++){
-                int start=actis[i][0];
+            int lastEnd=activities[0][1];
+            for(int i=1;i<activities.length;i++){
+                int start=activities[i][0];
                 if(start>=lastEnd){
                     count++;
-                lastEnd=actis[i][1];
+                lastEnd=activities[i][1];
                 }
             }
             return count;
@@ -20,3 +21,5 @@ public class Main{
             System.out.println(activitySelection(actis));
         }
     }
+//Time Complexity:O(n logn)
+//Space Complexity:O(1)-no extra data structure is used and we have fixed variables to calculate non overlapping activities.
