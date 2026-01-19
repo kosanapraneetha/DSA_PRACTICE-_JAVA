@@ -1,5 +1,5 @@
 //Problem:Searching key in BST.
-public class Main{
+public class BSTSearch{
     static class Node{
     int data;
     Node left;
@@ -38,7 +38,7 @@ public class Main{
         }
     }
     public static void main(String[] args){
-        Main obj=new Main();
+        BSTSearch obj=new BSTSearch();
        obj.insert(6);
        obj.insert(8);
        obj.insert(35);
