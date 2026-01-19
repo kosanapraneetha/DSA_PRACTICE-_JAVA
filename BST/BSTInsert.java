@@ -1,5 +1,5 @@
 //Problem:BST Insertion
-public class BST{
+public class BSTInsert{
     static class Node{
         int data;
         Node left;
@@ -31,7 +31,7 @@ public class BST{
     }
     
     public static void main(String[] args){
-        BST obj=new BST();
+        BSTInsert obj=new BSTInsert();
         obj.insert(8);
         obj.insert(10);
         obj.insert(13);
@@ -40,6 +40,4 @@ public class BST{
        inorder(obj.root);
     }
 }
-//Time complexity:O(log n)
-//Space Complexity:O(log n)--recursive path
 //Mostly BST's complexity's are O(h);
