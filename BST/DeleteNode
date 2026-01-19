@@ -1,0 +1,79 @@
+//Problem:Deleting a node in BST.
+//Approach:Creating a method which handles deletion of node with no or one or two child.
+public class Main{
+    static class Node{
+        int data;
+        Node left,right;
+        Node(int data){
+            this.data=data;
+            left=right=null;
+        }
+    }
+    Node root;
+    public void insert(int data){
+        root=insert(root, data);
+    }
+    private Node insert(Node node,int data){
+        if(node==null) return new Node(data);
+        if(data<node.data){
+            node.left=insert(node.left,data);
+        }
+        else if(data>node.data){
+            node.right=insert(node.right,data);
+        }
+        return node;
+    }
+    public Node deleteNode(Node node,int key){
+        if(node==null) return null;
+        if(key<node.data){
+            node.left=deleteNode(node.left,key);
+        }
+        else if(key>node.data){
+            node.right=deleteNode(node.right,key);
+        }
+        else{
+            //one or no childs
+            if(node.left==null) return node.right;
+            else if(node.right==null) return node.left;
+             
+             //two children
+             node.data=minValue(node.right);
+             node.right=deleteNode(node.right,node.data);
+        }
+        return node;
+    }
+    private int minValue(Node node){
+        int min=node.data;
+        while(node.left!=null){
+           node=node.left;
+           min=node.data;
+        }
+        return min;
+    }
+    public void inorder(Node root){
+        if(root==null) return;
+        inorder(root.left);
+        System.out.println(root.data+" ");
+        inorder(root.right);
+    }
+    public static void main(String[] args){
+        Main obj=new Main();
+        obj.insert(50);
+        obj.insert(30);
+        obj.insert(70);
+        obj.insert(20);
+        obj.insert(40);
+        obj.insert(60);
+        obj.insert(80);
+        System.out.println("Inorder before deletion: ");
+        obj.inorder(obj.root);
+       obj.root= obj.deleteNode(obj.root,50);
+        System.out.println("Inorder after deletion:");
+        obj.inorder(obj.root);
+        
+    }
+}
+//Time and Space Complexity:O(h);
+
+
+   
