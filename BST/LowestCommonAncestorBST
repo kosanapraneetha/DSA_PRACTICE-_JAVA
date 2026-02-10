@@ -1,6 +1,6 @@
 //Problem:Find lowest common ancestor of two nodes in a BST.
 //Approach:By traversing left or right until split point is found.
-public class LowestCommonAncestor{
+public class LowestCommonAncestorBST{
     static class Node{
         int data;
         Node left,right;
@@ -35,7 +35,7 @@ public class LowestCommonAncestor{
         return node;
     }
     public static void main(String[] args){
-        LowestCommonAncestor obj=new LowestCommonAncestor();
+        LowestCommonAncestorBST obj=new LowestCommonAncestorBST();
         obj.insert(20);
         obj.insert(8);
         obj.insert(22);
