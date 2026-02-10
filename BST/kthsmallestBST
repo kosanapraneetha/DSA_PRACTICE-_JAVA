@@ -1,7 +1,7 @@
 //Problem:Find the kth Smallest element in a Binary Search Tree.
 //Approach:Using inorder traversal with count variable to identify the kth element.
 
-public class kthSmallest{
+public class kthSmallestBST{
     static class Node{
         int data;
         Node left,right;
@@ -37,7 +37,7 @@ public class kthSmallest{
                 kthsmallest(node.right,k);
             }
             public static void main(String[] args){
-                kthSmallest obj=new  kthSmallest();
+                kthSmallestBST obj=new  kthSmallestBST();
                 obj.insert(50);
                 obj.insert(30);
                 obj.insert(20);
