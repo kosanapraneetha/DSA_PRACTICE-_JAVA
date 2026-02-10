@@ -1,0 +1,28 @@
+//Problem:Sum of the nodes of BST
+//Approach:Using recursion
+public class SumNodesBST{
+    static class Node{
+        int data;
+        Node left,right;
+        public Node(int data){
+            this.data=data;
+            left=right=null;
+        }
+    }
+    Node root;
+     int sumNodes(Node root){
+        if(root==null) return 0;
+      
+        return root.data+sumNodes(root.left)+sumNodes(root.right);
+    }
+    public static void main(String[] args){
+       SumNodesBST obj=new SumNodesBST();
+        obj.root=new Node(8);
+        obj.root.left=new Node(5);
+        obj.root.right=new Node(10);
+        obj.root.right.right=new Node(15);
+        System.out.println("Sum of Nodes of BST : "+ obj.sumNodes(obj.root));
+    }
+}
+//Time Complexity:O(n)
+//Space Complexity:O(h)
