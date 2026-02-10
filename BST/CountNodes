@@ -1,0 +1,34 @@
+//Problem:Find nodes count in BST Tree
+//Approach:Using recursion and return 1+leftnodes+rightnodes
+public class CountNodes{
+    static class Node{
+        int data;
+        Node left,right;
+        public Node(int data){
+            this.data=data;
+            left=right=null;
+        }
+    }
+    Node root;
+    int max(int a,int b){
+        if(a>b) return a;
+        else return b;
+    }
+    
+     int countNodes(Node root){
+        if(root==null) return 0;
+        int leftNodes=countNodes(root.left);
+        int rightNodes=countNodes(root.right);
+        return 1+leftNodes+rightNodes;
+    }
+    public static void main(String[] args){
+        CountNodes obj=new CountNodes();
+        obj.root=new Node(8);
+        obj.root.left=new Node(5);
+        obj.root.right=new Node(10);
+        obj.root.right.right=new Node(15);
+        System.out.println("Height : "+ obj.countNodes(obj.root));
+    }
+}
+//Time Complexity:O(n)-->n-no.of nodes
+//Space:O(h)-->h-height of the tree
