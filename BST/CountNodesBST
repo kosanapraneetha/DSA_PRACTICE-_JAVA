@@ -1,6 +1,6 @@
 //Problem:Find nodes count in BST Tree
 //Approach:Using recursion and return 1+leftnodes+rightnodes
-public class CountNodes{
+public class CountNodesBST{
     static class Node{
         int data;
         Node left,right;
@@ -22,7 +22,7 @@ public class CountNodes{
         return 1+leftNodes+rightNodes;
     }
     public static void main(String[] args){
-        CountNodes obj=new CountNodes();
+        CountNodesBST obj=new CountNodesBST();
         obj.root=new Node(8);
         obj.root.left=new Node(5);
         obj.root.right=new Node(10);
