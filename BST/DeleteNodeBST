@@ -1,6 +1,6 @@
 //Problem:Deleting a node in BST.
 //Approach:Creating a method which handles deletion of node with no or one or two child.
-public class DeleteNode{
+public class DeleteNodeBST{
     static class Node{
         int data;
         Node left,right;
@@ -57,7 +57,7 @@ public class DeleteNode{
         inorder(root.right);
     }
     public static void main(String[] args){
-        DeleteNode obj=new DeleteNode();
+        DeleteNodeBST obj=new DeleteNodeBST();
         obj.insert(50);
         obj.insert(30);
         obj.insert(70);
