@@ -1,0 +1,36 @@
+//Problem:Check whethera tree is balanced or not.
+//Approach:By finding each nodes height.
+public class BalancedBST{
+    static class Node{
+        int data;
+        Node left,right;
+        Node(int data){
+            this.data=data;
+            left=right=null;
+        }
+    }
+    Node root;
+    public int checkheight(Node root){
+        if(root==null) return 0;
+        int left=checkheight(root.left);
+        if(left==-1) return -1;
+        int right=checkheight(root.right);
+        if(right==-1) return -1;
+        
+        if(Math.abs(left-right)>1) return -1;
+        return 1+Math.max(left,right);
+    }
+    public boolean balanceTree(Node root){
+        return checkheight(root)!=-1;
+    }
+    public static void main(String[] args){
+        BalancedBST obj=new BalancedBST();
+        obj.root=new Node(8);
+        obj.root.left=new Node(5);
+        obj.root.right=new Node(10);
+        obj.root.right.right=new Node(15);
+        System.out.println("Balanced Tree : "+obj.balanceTree(obj.root));
+    }
+}
+//Time complexity:O(n)
+//Space complexity:O(h)
