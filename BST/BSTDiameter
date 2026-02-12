@@ -1,0 +1,36 @@
+//Problem:Find the diameter (longest path) of a BST.
+//Approach:Compute height and update diameter during DFS.
+public class BSTDiameter{
+    static class Node{
+        int data;
+         Node left,right;
+         Node(int data){
+             this.data=data;
+             left=right=null;
+         }
+    }
+    Node root;
+    int diameter=0;
+    public int height(Node root){
+        if(root==null) return 0;
+        int left=height(root.left);
+        int right=height(root.right);
+        diameter=Math.max(diameter,left+right+1);
+        return 1+Math.max(left,right);
+    }
+    public int diameterBST(Node root){
+        height(root);
+        return diameter;
+    }
+    public static void main(String[] args) {
+        BSTDiameter tree = new BSTDiameter();
+        tree.root = new Node(8);
+        tree.root.left = new Node(5);
+        tree.root.right = new Node(10);
+        tree.root.right.right = new Node(15);
+        tree.root.right.right.right = new Node(20);
+        System.out.println("Diameter of BST: " + tree.diameterBST(tree.root));
+    }
+}
+//Time Complexity:O(n)
+//Space Complexity:O(h)
